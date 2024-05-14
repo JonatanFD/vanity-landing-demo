@@ -1,0 +1,66 @@
+---
+import Card from "./Card.astro"
+
+const CARDS = [
+	{title: "Efficient", description: "Vanity helps get throughout the day without worrying about with dangerous emaiils.",
+
+	user : {
+		name: "Rebeca Alemán",
+		role: "Software Engineer",
+		avatar: "/avatar-1.png"
+	}
+	}
+	,
+	{title: "Amazing", description: "My mailbox has never been so organized since I joined the Vanity service. Amazing !",
+
+	user : {
+		name: "Joan Carranza",
+		role: "Entrepreneur",
+		avatar: "/avatar-2.png"
+	}
+	},
+	{title: "Useful", description: "I deal with thousands of emails, Vanity's filter helps me through the day zero danger.",
+
+	user : {
+		name: "Zoe Segovia",
+		role: "Manager",
+		avatar: "/avatar-3.png"
+	}
+	}
+]
+
+---
+
+<section class="w-full mx-auto mt-20">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+
+      <div class="flex items-center flex-col gap-6">
+          <div class="flex items-center gap-10 text-xl xl:text-4xl">
+              <h2>
+                  Why choose <span class="font-bold">VANITY</span>?
+              </h2>
+              <img
+                  src="/logo.svg"
+                  alt="Vanity"
+                  class="w-[32px] xl:w-[73px]"
+              />
+          </div>
+          <a href="/" class="font-bold text-[#4254E3]">LEARN MORE</a>
+      </div>
+      
+      <div class="flex gap-16 mt-20 flex-col xl:flex-row">
+        {
+          CARDS.map((card) => (
+            <Card
+              title={card.title}
+              description={card.description}
+              user={card.user} />
+          ))
+        }
+      </div>
+      
+      <div class="text-lg xl:text-2xl bg-[#4254E3] px-10 py-2 rounded-full mt-20">
+        <a href="/login">Join <span class="font-bold">Now</span></a>
+      </div>
+  </div>
+</section>

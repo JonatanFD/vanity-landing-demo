@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginForm from "../components/LoginForm"
+---
+
+<Layout title="Vanity Login">
+  <main class="flex flex-col p-4 relative items-center justify-center h-screen">
+    <a href="/" class="w-fit absolute left-4 top-4">
+      <img src="/arrow-back.svg" alt="arrow back">
+    </a>
+
+    <LoginForm client:idle />
+
+  </main>
+</Layout>
